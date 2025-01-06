@@ -27,5 +27,18 @@ sudo systemctl enable docker
 # Restart Docker Daemon 
 sudo systemctl restart docker
 cd /opt/
-sudo wget https://github.com/satheeshr03/Terraform/tree/main/files/Dockerfile
+# Downloading the Dockerfile from Git
+sudo wget https://raw.githubusercontent.com/satheeshr240/Terraform/main/files/Dockerfile
+
+# Build the Tomcat Image
 sudo docker build .
+sudo sleep 10
+# Validate the Tomcat Image and assign the images id to Variable
+IMG=$(sudo docker images | grep none | awk '{print $3}')
+sudo echo $IMG
+
+# Assign Tag to Tomcat Docker Image
+sudo docker tag $IMG tomcat:1.0.0
+
+# Execute/Run a Tomcat Container
+sudo docker run -d --name appserver -p 80:80 $IMG
