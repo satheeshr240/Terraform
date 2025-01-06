@@ -42,7 +42,8 @@ sudo wget https://raw.githubusercontent.com/satheeshr240/Terraform/main/docker-c
 sudo wget https://raw.githubusercontent.com/satheeshr240/Terraform/main/docker-compose/files/docker-compose.yml
 
 # Create a Django project
-sudo docker-compose run web django-admin startproject cloudops .
+sudo docker-compose run web django-admin startproject cloudops /opt/
 # Change the User & Group Permissions
 sudo su - ubuntu
 sudo chown -R $USER:$USER cloudops *
+sudo chown -R ubuntu:ubuntu cloudops *
