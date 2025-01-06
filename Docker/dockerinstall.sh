@@ -28,7 +28,7 @@ sudo systemctl enable docker
 sudo systemctl restart docker
 cd /opt/
 # Downloading the Dockerfile from Git
-sudo wget https://raw.githubusercontent.com/satheeshr240/Terraform/main/files/Dockerfile
+sudo wget https://raw.githubusercontent.com/satheeshr240/Terraform/main/Docker/files/Dockerfile
 
 # Build the Tomcat Image
 sudo docker build .
