@@ -24,8 +24,8 @@ terraform {
   }
 }
 
-# Continuous Integration - Jenkins
-resource "aws_instance" "satheesh_Jenkins" {
+# Web Application - Tomcat
+resource "aws_instance" "satheesh_Tomcat" {
   ami                    = var.ami
   instance_type          = var.instance_type
   key_name               = var.key_name
@@ -38,4 +38,3 @@ resource "aws_instance" "satheesh_Jenkins" {
     CreatedBy = "Terraform"
   }
 }
-
