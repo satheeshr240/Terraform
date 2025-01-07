@@ -14,10 +14,10 @@ sudo apt-get install git curl unzip tree wget -y
 
 # Install Docker on Ubuntu Server
 sudo apt-get install docker.io -y 
-
+sudo apt-get update
 # Install Docker Compose on Ubuntu Server
 sudo apt-get install docker-compose -y 
-
+sudo apt-get update
 # Enable Docker For Ubuntu User
 sudo usermod -aG docker ubuntu
 
