@@ -13,14 +13,16 @@ RUN echo $TZ > /etc/timezone
 # Download, Install & Configure 
 RUN apt-get update 
 # RUN apt-get install openjdk-17-jdk -y
-RUN apt-get install openjdk-21-jdk -y
+#RUN apt-get install openjdk-21-jdk -y
+RUN apt-get install openjdk-22-jdk -y
 RUN apt-get install wget -y 
 RUN apt-get install curl -y 
 RUN apt-get install unzip -y 
 
 # Environment Variables
 # ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64/
-ENV JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64/
+# ENV JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64/
+ENV JAVA_HOME=/usr/lib/jvm/java-22-openjdk-amd64/
 
 # Update Environment Variable unto File 
 RUN echo $JAVA_HOME >> /etc/environment
