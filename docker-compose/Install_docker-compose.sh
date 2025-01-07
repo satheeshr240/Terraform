@@ -46,4 +46,4 @@ sudo docker-compose run web django-admin startproject cloudops /opt/
 # Change the User & Group Permissions
 sudo su - ubuntu
 sudo chown -R $USER:$USER cloudops *
-sudo chown -R ubuntu:ubuntu cloudops *
+#sudo chown -R ubuntu:ubuntu cloudops *
