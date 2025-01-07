@@ -20,7 +20,7 @@ RUN apt-get install unzip -y
 
 # Environment Variables
 # ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64/
-ENV JAVA_HOME=ENV JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64/
+ENV JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64/
 
 # Update Environment Variable unto File 
 RUN echo $JAVA_HOME >> /etc/environment
