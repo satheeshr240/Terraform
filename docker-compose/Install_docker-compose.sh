@@ -51,12 +51,12 @@ sudo cp /opt/cloudops/settings.py "/opt/cloudops/settings.py_$(date +%F_%R)"
 # adding configuration 
 sudo sed -i '/from pathlib import Path/a import os' /opt/cloudops/settings.py
 sudo sed -i "29a ALLOWED_HOSTS = ['*']" /opt/cloudops/settings.py
-sudo sed -i "80a 'PORT': 5432," /opt/cloudops/settings.py
-sudo sed -i "80a 'HOST': 'db'," /opt/cloudops/settings.py
-sudo sed -i "80a 'PASSWORD': os.environ.get('POSTGRES_PASSWORD')," /opt/cloudops/settings.py
-sudo sed -i "80a 'USER': os.environ.get('POSTGRES_USER')," /opt/cloudops/settings.py
-sudo sed -i "80a 'NAME': os.environ.get('POSTGRES_NAME')," /opt/cloudops/settings.py
-sudo sed -i "80a 'ENGINE': 'django.db.backends.postgresql'," /opt/cloudops/settings.py
+sudo sed -i "81a 'PORT': 5432," /opt/cloudops/settings.py
+sudo sed -i "81a 'HOST': 'db'," /opt/cloudops/settings.py
+sudo sed -i "81a 'PASSWORD': os.environ.get('POSTGRES_PASSWORD')," /opt/cloudops/settings.py
+sudo sed -i "81a 'USER': os.environ.get('POSTGRES_USER')," /opt/cloudops/settings.py
+sudo sed -i "81a 'NAME': os.environ.get('POSTGRES_NAME')," /opt/cloudops/settings.py
+sudo sed -i "81a 'ENGINE': 'django.db.backends.postgresql'," /opt/cloudops/settings.py
 # deleting line
 sudo sed -i '29d' /opt/cloudops/settings.py
 sudo sed -i '79,80d' /opt/cloudops/settings.py
