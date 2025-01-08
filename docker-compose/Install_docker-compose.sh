@@ -29,7 +29,8 @@ sudo systemctl enable docker
 
 # Restart Docker Daemon 
 sudo systemctl restart docker
-
+# Switching to ubuntu user
+sudo su - ubuntu
 cd /opt/
 
 # Downloading the Dockerfile from Git
@@ -44,6 +45,21 @@ sudo wget https://raw.githubusercontent.com/satheeshr240/Terraform/main/docker-c
 # Create a Django project
 sudo docker-compose run web django-admin startproject cloudops .
 # Change the User & Group Permissions
-sudo su - ubuntu
 sudo chown -R $USER:$USER cloudops *
-#sudo chown -R ubuntu:ubuntu cloudops *
+# Backup settings.py file
+sudo cp /opt/cloudops/settings.py "/opt/cloudops/settings.py_$(date +%F_%R)"
+# adding configuration 
+sudo sed -i '/from pathlib import Path/a import os' /opt/cloudops/settings.py
+sudo sed -i "28a ALLOWED_HOSTS = ['*']" /opt/cloudops/settings.py
+sudo sed -i "79a 'PORT': 5432," /opt/cloudops/settings.py
+sudo sed -i "79a 'HOST': 'db'," /opt/cloudops/settings.py
+sudo sed -i "79a 'PASSWORD': os.environ.get('POSTGRES_PASSWORD')," /opt/cloudops/settings.py
+sudo sed -i "79a 'USER': os.environ.get('POSTGRES_USER')," /opt/cloudops/settings.py
+sudo sed -i "79a 'NAME': os.environ.get('POSTGRES_NAME')," /opt/cloudops/settings.py
+sudo sed -i "79a 'ENGINE': 'django.db.backends.postgresql'," /opt/cloudops/settings.py
+# deleting line
+sudo sed -i '28d' /opt/cloudops/settings.py
+sudo sed -i '78,79d' /opt/cloudops/settings.py
+
+# Bulid docker compose
+sudo docker-compose up
