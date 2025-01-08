@@ -50,16 +50,16 @@ sudo chown -R $USER:$USER cloudops *
 sudo cp /opt/cloudops/settings.py "/opt/cloudops/settings.py_$(date +%F_%R)"
 # adding configuration 
 sudo sed -i '/from pathlib import Path/a import os' /opt/cloudops/settings.py
-sudo sed -i "28a ALLOWED_HOSTS = ['*']" /opt/cloudops/settings.py
-sudo sed -i "79a 'PORT': 5432," /opt/cloudops/settings.py
-sudo sed -i "79a 'HOST': 'db'," /opt/cloudops/settings.py
-sudo sed -i "79a 'PASSWORD': os.environ.get('POSTGRES_PASSWORD')," /opt/cloudops/settings.py
-sudo sed -i "79a 'USER': os.environ.get('POSTGRES_USER')," /opt/cloudops/settings.py
-sudo sed -i "79a 'NAME': os.environ.get('POSTGRES_NAME')," /opt/cloudops/settings.py
-sudo sed -i "79a 'ENGINE': 'django.db.backends.postgresql'," /opt/cloudops/settings.py
+sudo sed -i "29a ALLOWED_HOSTS = ['*']" /opt/cloudops/settings.py
+sudo sed -i "80a 'PORT': 5432," /opt/cloudops/settings.py
+sudo sed -i "80a 'HOST': 'db'," /opt/cloudops/settings.py
+sudo sed -i "80a 'PASSWORD': os.environ.get('POSTGRES_PASSWORD')," /opt/cloudops/settings.py
+sudo sed -i "80a 'USER': os.environ.get('POSTGRES_USER')," /opt/cloudops/settings.py
+sudo sed -i "80a 'NAME': os.environ.get('POSTGRES_NAME')," /opt/cloudops/settings.py
+sudo sed -i "80a 'ENGINE': 'django.db.backends.postgresql'," /opt/cloudops/settings.py
 # deleting line
-sudo sed -i '28d' /opt/cloudops/settings.py
-sudo sed -i '78,79d' /opt/cloudops/settings.py
+sudo sed -i '29d' /opt/cloudops/settings.py
+sudo sed -i '79,80d' /opt/cloudops/settings.py
 
 # Bulid docker compose
 sudo docker-compose up
