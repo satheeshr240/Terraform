@@ -1,0 +1,3 @@
+1. How to delete particular file in git using cmd
+2. How to terminate particular instance via terraform script file
+3.

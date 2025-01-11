@@ -1,0 +1,16 @@
+[Unit]
+    Description=JFrog artifactory service
+    After=syslog.target network.target
+
+    [Service]
+    Type=forking
+
+    ExecStart=/opt/jfrog/app/bin/artifactory.sh start
+    ExecStop=/opt/jfrog/app/bin/artifactory.sh stop
+
+    User=root
+    Group=root 
+    Restart=always
+
+    [Install]
+    WantedBy=multi-user.target
