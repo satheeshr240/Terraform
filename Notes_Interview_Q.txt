@@ -1,0 +1,443 @@
+These options allow us to get the context around a matched string. The -A flag represents after and prints a specified number of lines after a matched string. The -B flag stands for before, and it prints the lines before a match. Lastly, we’ve got option -C which prints the lines both before and after the matched string.
+ 
+grep -in "/RechargeService/api/pagaphone" -A20 -B10 rWebhook.log
+grep "4324453681418421" -C10 rWebhook.log
+
+grep -rni "text string" /path/to/directory
+-r performs a recursive search within subdirectories.
+-n displays the line number containing the pattern.
+-i ignores the case of the text string.
+
+grep -rli "text string" /path/to/directory
+
+-l prints only the names of the files containing the pattern.
+
+find /path/to/directory -type f -exec grep -l "text string" {} \;
+
+experian2.pcap
+
+/path/to/directory specifies the directory in which the search will be performed.
+-type f filters the search to only include regular files.
+-exec grep -l "text string" {} \; executes the grep command on each file found and displays the filenames that contain the text string.
+
+Basic Searching in Vim / Vi
+Searching Forward For Next Result of a Word
+/pattern
+jump to the next instance of the patter in the same direction with n
+skip to the next instance of the pattern in the opposite direction with N
+
+Searching Backward For a Word
+?pattern
+
+Searching for Current Word
+Search for the next instance of the word with *
+Search for the previous instance of the word with #
+
+Searching for Whole Words
+/\<word\>
+Case Insensitive Search
+/\<word\>\c
+
+Open a File at a Specific Word
+vi +/word [file_name]
+
+Highlight Search Results
+To enable highlighting
+:set hlsearch
+To disable this feature run
+:set !hlsearch
+
+:se nu
+:se nonu
+:number
+
+
+https://702029301338.signin.aws.amazon.com/console
+Access key : AKIA2G5BVAZNIWQ527OJ
+Secret access key : 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
+
+
+==========================================================================================
+
+https://654654564186.signin.aws.amazon.com/console
+
+654654564186
+
+Access key : AKIAZQ3DT45NDMKV5EWL
+Secret access key : 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
+
+
+terraform {
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+      version = "5.44.0"
+    }
+  }
+}
+
+provider "aws" {
+  # Configuration options
+}
+
+terraform {
+
+ required_providers {
+  aws = {
+   
+
+# Initialize Terraform
+terraform init
+
+# Terraform Validate
+terraform validate
+# Format Terraform configuration files
+terraform fmt
+
+# Terraform Plan to Verify what it is going to create / update / destroy
+terraform plan
+
+# Terraform Apply to Create EC2 Instance
+terraform apply 
+
+# Destroy EC2 Instance
+terraform destroy
+
+# Delete Terraform files 
+rm -rf .terraform*
+rm -rf terraform.tfstate*
+
+# Terraform Init with upgrade option to change provider version
+terraform init -upgrade
+
+
+GitLab Access tokens : glpat-6_ysQ6Xm73PDqHBBYMMr
+
+git config --global user.name "satheeshr03"
+git config --global user.name "satheeshr240"
+
+Token ID: 
+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
+
+================== Intall AWSCLI in Ubuntu =======================
+Refernce URL : https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html#getting-started-install-instructions
+
+sudo apt update
+sudo apt install curl unzip -y
+sudo curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+sudo unzip awscliv2.zip
+sudo ./aws/install
+aws --version
+sudo rm -rf awscliv2.zip
+sudo apt update
+aws configure
+aws s3 ls
+
+================== Intall Terraform in Ubuntu =======================
+
+Refernce URL: https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
+
+curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+sudo apt-add-repository "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+sudo apt update
+sudo apt install terraform
+terraform -version
+
+===================== Doubts =========================
+
+Docker:
+can we set differrent time zones for containers
+how to connect different docker engine with one docker client
+can we create multiple files in terraform user_data tag   "user_data = file("dockerinstall.sh")"
+
+https://github.com/satheeshr03/Terraform/blob/main/files/devops.war
+https://github.com/satheeshr03/Terraform/tree/main/files/devops.war
+https://github.com/satheeshr03/Terraform/tree/main/files/Dockerfile
+
+files/devops.war
+
+
+=============== SSH RSA Key =================
+
+root@ip-172-31-25-55:~# ssh-keygen -t rsa -b 4096 -C"satheeshr241@gmail.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /root/.ssh/id_rsa
+Your public key has been saved in /root/.ssh/id_rsa.pub
+
+
+******AWS DevOps Interview Question******
+--------------- 1 ---------------------
+1. tell me something about yourself 
+2. what is the fucntion in aws lambda 
+3. tell me types of routing policies in route 53 
+4. what is the diffrence between terraform and cloudfront 
+5. why we use terraform import command 
+6. explain CNI works in kubernetes 
+7. can i know how many exp you have in monitoring and logging 
+8. lets have a scenario you are experincing high cpu utilization on your ec2 instances how would you use cloudwatch to troubleshoot this issue.
+9. how would you setup prometehous to monitor a custom application theat youve devloped 
+10. you need to create a grafana alert to notify you when the cpu utlization of a sepcific ec2 instance exceeds 90% how would you configure the alert 
+11. how do you approach troubleshooting a vpc-related issue ? Describe your systematic approach including gathering information analyzing logs and using troubleshooting tools.
+12. how do you troubleshoot subnet issues such as insufficient ip addreses or overlapping CIDR Block 
+13. your compny has multiple vpc for diffrent teams or environments how would you manage and optimize there vpc 
+14. what is rds in aws . your rds database is under heavy load stating to degrade in performance what your option to scale the database handle the increased load 
+15. you need to implement a complete ci/cd pipeline for an application hosted on aws using aws services what tool and services would you choose why 
+16. what is the recent problem you have to resolve with respect to eks.
+
+--------------- 2 ---------------------
+1. Explain the orchestration of kubernetes...?
+2. What is the difference between state less and state full applications..?
+3. What is the difference between Deployment and Statefulset and explain with example..?
+4. What is PVC and how you are using this component in your current organization..?
+5. How you can configure the ebs volume to a pod..?
+6. Write a sample HPA (Horizantal pod Autoscaler) file..?
+7. How do you configure Argocd for deployment purpose in k8s..?
+8. Default ports of prometheus and grafana..?
+9. Explain Network policies in k8s..?
+10. Write a sample jenkins declerative pipeline..?
+11. What is the use of jenkins file..?
+12. Tell me some jenkins plugins and use cases..?
+13. How do you handle user authentication in jenkins..?
+14. Explain the terraform commands that can be used to deploying a module ..?
+15. What is the use of backend file in terraform..?
+16. what is state file..?
+17. what is the difference between .tf and state file..?
+18. what is sonarlint..?
+19. What are common errors that you are seeing in the kubernetes pods..?
+20. What is the source for prometheus..?
+21. Which database types are using the opensearch and grafana..?
+22. Difference between daemonset and statefulset..?
+
+--------------- 3 ---------------------
+1. What is the purpose of a NAT gateway, and what are some of its use cases?
+2. How do you decide which load balancer is best suited for an application?
+3. What are the key features of the Nginx service?
+4. What are the differences between a Network Load Balancer and an Application Load Balancer?
+5. Why is a DynamoDB table used to lock the Terraform state file?
+6. How can we manage the Terraform state file effectively?
+7. If you encounter an error with the `terraform plan` command, how would you troubleshoot it? What steps would you take?
+8. What stages are available in a Jenkins pipeline? How do you configure a webhook for auto-triggering builds?
+9. What DevSecOps tools have you used? How do you secure applications using these tools?
+10. How do you manage secrets in a Jenkins pipeline?
+11. How do you deploy a microservices application so that each service remains isolated?
+12. In a Dockerfile, what are the use cases for the `COPY` and `ADD` commands?
+13. Write a Dockerfile for a Node.js application, including the build and run commands.
+14. Briefly explain Kubernetes architecture, covering each component and its use case.
+15. How do you manage connectivity between multiple pods in a Kubernetes cluster?
+16. How do worker nodes communicate with the control plane (master node)?
+17. How can we increase the capacity of pods using the CLI (command line interface)?
+18. What are the use cases of EKS (Elastic Kubernetes Service)?
+19. If a new version fails, how would you roll it back?
+20. What is an Ansible playbook, and how does it work? How does Ansible handle variables differently from playbooks?
+21. How do you configure Grafana and Prometheus for monitoring?
+22. What steps would you take if an EC2 instance runs out of memory? Are there specific strategies you'd try first to increase its capacity?
+23. What are the major challenges you've faced in your role? 
+
+--------------- 4 ---------------------
+1.What are the components in ECS?
+2.how to connect lambda function to the outside of the world?
+3.How many lambda functions can execute through single account?
+4.scenario: Application is in public subnet and database is in private subnet, So how the data can send or receive from the private subnet to the application?
+5.What are API gateway?
+6..Resources already exist in the cloud, so how to configure it with terraform?
+7.What are the custom images in docker?
+8.Difference b/w CMD,RUN and Entry point?
+9.Difference b/w Add and Copy?
+10.What are targets in Docker-Compose?
+
+--------------- 5 ---------------------
+1. How can you list all running processes on a Linux system?
+2. What is the difference between grep and awk?
+3. How to change permissions of a file to 755 in Linux?
+4. You need to find all files larger than 500MB under the /var/log directory. What command will you use?
+5. A specific service has stopped responding. How will you find its process ID and kill it safely without affecting other processes?
+6. How to identify the processes consuming the most CPU or memory?
+7. How to check the free disk space on a Linux machine? If a particular partition (e.g., /var) is 95% full, what steps will you take to resolve it?
+8. You suspect a service failure occurred last night. How to search for all error messages in the logs from yesterday using a single command?
+9. A user reports they cannot execute a script named deploy.sh. What steps will you take to fix permissions so only the user and the group can execute it?
+10. Explain the output of ls -l and how file permission bits work.
+11. You are asked to schedule a script to run every day at 3:00 AM. How to set up a cron job for this task?
+12. You need to find all .log files modified in the last 7 days and archive them into a single .tar.gz file. What commands would you use?
+13. A developer accidentally deleted an important file. You don’t have a backup, but you suspect it is still open in a running process. How to recover the file?
+
+--------------- 6 ---------------------
+1. how you manage infrastructure as code (IaC) using tools like Terraform or Ansible? what are the challenges you have faced?
+2. Explain how you’ve utilized Elastic Beanstalk. How is it different from directly managing EC2 instances?
+3. Suppose a Jenkins build job fails due to a missing dependency in the Maven build process. How to debug and resolve the issue?
+4. How can you ensure that only tested and secure artifacts are deployed to production in your pipeline?
+5. Write a Terraform configuration snippet to create an S3 bucket with versioning and encryption enabled.
+6. How do you handle large Docker images? 
+7. Can you tell me a scenario where you needed to orchestrate multiple Docker containers using Kubernetes or a similar tool?
+8. Write a shell script to monitor the status of a Jenkins job and send an email if the job fails.
+9. Develop a script to find and delete all files older than 30 days in a specific S3 bucket directory.
+10. Write a Python script using Boto3 to list all EC2 instances and their statuses in a given region.
+11. Create a script to automate the process of creating a new Git branch, pushing changes, and opening a pull request using GitHub's API.
+12. Write an Ansible playbook to deploy a web application (e.g., Nginx) on an EC2 instance.
+13. How to handle idempotency in Ansible? Can you provide an example?
+14. Implement a Terraform module that creates an AWS EC2 instance with a security group allowing only HTTP and SSH access.
+
+--------------- 7 ---------------------
+What are the key differences between 𝐄𝐂𝟐, 𝐋𝐚𝐦𝐛𝐝𝐚, and 𝐄𝐂𝐒? In which scenarios would you use each service? 
+Explain the concept of 𝐕𝐏𝐂 in 𝐀𝐖𝐒. What are the components of a VPC, and how do they interact with each other? 
+What is the difference between an 𝐀𝐖𝐒 𝐬𝐞𝐜𝐮𝐫𝐢𝐭𝐲 𝐠𝐫𝐨𝐮𝐩 and 𝐚 𝐧𝐞𝐭𝐰𝐨𝐫𝐤 𝐀𝐂𝐋? 
+When would you use one over the other? 
+What is Amazon 𝐒𝟑 and what are the various storage classes available? How do you choose the right storage class for different use cases? 
+Can you explain the concept of 𝐀𝐮𝐭𝐨 𝐒𝐜𝐚𝐥𝐢𝐧𝐠 in AWS and how it works with Elastic Load Balancer? 
+What are AWS IAM roles and policies, and how do they differ from IAM users and groups? 
+What is 𝐂𝐥𝐨𝐮𝐝𝐅𝐨𝐫𝐦𝐚𝐭𝐢𝐨𝐧, and how does it help in managing infrastructure as code? 
+How does AWS handle fault tolerance and high availability across different regions and Availability Zones? 
+Explain the difference between 𝐀𝐦𝐚𝐳𝐨𝐧 𝐑𝐃𝐒 and 𝐃𝐲𝐧𝐚𝐦𝐨𝐃𝐁. When would you use one over the other? 
+What are some best practices for securing AWS resources? 
+What is 𝐀𝐖𝐒 𝐋𝐚𝐦𝐛𝐝𝐚, and how can it be used to implement serverless architecture? 
+What is 𝐀𝐖𝐒 𝐂𝐥𝐨𝐮𝐝𝐓𝐫𝐚𝐢𝐥 and how does it help with monitoring and security? 
+How do you use GitHub in the context of AWS for version control and deployment automation? 
+Explain how Docker can be integrated with AWS services, such as ECS and ECR, for containerized deployments. 
+What are the key differences between 𝐃𝐨𝐜𝐤𝐞𝐫 𝐜𝐨𝐧𝐭𝐚𝐢𝐧𝐞𝐫𝐬 𝐚𝐧𝐝 𝐭𝐫𝐚𝐝𝐢𝐭𝐢𝐨𝐧𝐚𝐥 𝐯𝐢𝐫𝐭𝐮𝐚𝐥 𝐦𝐚𝐜𝐡𝐢𝐧𝐞𝐬 
+In AWS, what is the role of a 𝐋𝐨𝐚𝐝 𝐁𝐚𝐥𝐚𝐧𝐜𝐞𝐫 and how does it work with EC2 and Docker containers? 
+Can you describe the concept of a 𝐩𝐮𝐛𝐥𝐢𝐜 𝐚𝐧𝐝 𝐩𝐫𝐢𝐯𝐚𝐭𝐞 𝐬𝐮𝐛𝐧𝐞𝐭 in networking, and how does it relate to 𝐬𝐞𝐜𝐮𝐫𝐢𝐭𝐲 𝐠𝐫𝐨𝐮𝐩𝐬 𝐚𝐧𝐝 𝐍𝐀𝐓 𝐠𝐚𝐭𝐞𝐰𝐚𝐲𝐬 in AWS? 
+What are security best practices for containerized applications running on AWS ECS? 
+What is the role of 𝐀𝐦𝐚𝐳𝐨𝐧 𝐑𝐨𝐮𝐭𝐞 𝟓𝟑 𝐢𝐧 𝐃𝐍𝐒 𝐦𝐚𝐧𝐚𝐠𝐞𝐦𝐞𝐧𝐭, and how would you use it to route traffic to various AWS resources?
+
+--------------- 8 ---------------------
+1. State the maximum size of an S3 bucket.
+2. Which AWS region is the cheapest?
+3. List the advantages of the Amazon Route 53 Resolver DNS Firewall over other AWS firewalls.
+4. Differentiate between Amazon VPC Traffic Mirroring and Amazon VPC Flow Logs.
+5. Explain how Amazon Redshift performs workload isolation and changeability.
+6. Explain how Amazon VPC works with Amazon RDS.
+7. How is data transferred in AWS Snowcone and AWS storage devices?
+8. How are the storage contention issues managed in EBS?
+9. What is AWS Lambda Runtime Interface Emulator?
+10. Is region support available on Amazon services?
+11. List the benefits of AWS.
+12. Define Amazon EC2 Auto Scaling.
+13. List the two types of queues in SQS.
+14. When was the idea of AWS rendered?
+15. Why do people prefer using AWS?
+16. Define Sticky Sessions in ELB.
+17. What is CloudTrail?
+18. Define Amazon ECS.
+19. Define Amazon EFS.
+20. List the different storage classes in S3.
+21. How does the user secure the access to s3 bucket?
+22. What are the policies in AWS?
+23. List the different types of instances.
+24. Define Load Balancer.
+25. Define VPC Peering connection.
+26. How does a user control the security of a VPC?
+
+--------------- 9 ---------------------
+1. Git Merge and rebase?
+2. What is docker file how it works? 
+3. What are the ansible tasks? 
+4. How to deploy to 100 servers at a time? 
+5. What is docker volume?  
+6. Have you worked on ansible modules?  
+7. What is DevOps?
+8. Why do we need a DevOps? 
+9. How do you configure the job in Jenkins? 
+10. What are the roles you played in your laptop? 
+11. How do you configure ansible in Jenkins? 
+12. Difference between ant and maven? 
+13. Git workflow? 
+14. Maven lifecycle? 
+15. Where do you find errors in Jenkins? 
+16. How do you integrate sonar Qube in Jenkins?  
+17. How do you configures3 bucket? 
+18. Differences between git rebase and git merge? 
+19. What is git init? 
+20. What is git clone? 
+21. If there is suddenly the file is deleted in git and how do you get it back? 
+22. What is CI/CD? 
+23. What is the purpose of Docker? 
+24. In Jenkins how can you find log files? 
+25. By using Ansible how to deploy in Jenkins? 
+26. What is the use of ansible? 
+27. Jenkins workflow and write a script for this workflow?  
+28. In Ubuntu sever what is a public key and private key? 
+29. Three members have same password one I have to change write a script for this example? 
+30. Write a script for how to push the repository and build the job in Jenkins?  
+31. What are EC2 and VPC how we create & write a script?
+
+--------------- 10 ---------------------
+1. What are the day-to-day activities of a DevOps Engineer?
+2. How do you overcome hurdles in DevOps?
+3. Why do we need Shell scripting in DevOps? 
+4. What’s the difference between a `cron` job and running it under `sudo`?
+5. How do you address security issues in `cron` jobs?
+6. How do you set up Apache on a Linux server?
+7. What are the steps to convert HTTP to HTTPS?
+8. What are some limitations of Shell scripting? 
+9. What’s the difference between `$*` and `$@` in Bash? 
+10. Explain Primary Key vs. Foreign Key in databases. 
+11. What’s the difference between the `HAVING` and `WHERE` clauses in SQL? 
+12. Explain different types of JOIN commands in SQL. 
+13. What’s the difference between `DROP`, `TRUNCATE`, and `DELETE` in SQL? 
+14. How do you handle merging branches in Git? 
+15. Explain Continuous Deployment vs. Continuous Delivery. 
+16. How do you schedule tasks in Jenkins? 
+17. What’s the difference between Cron jobs and Jenkins scheduling? 
+18. What are agents in Jenkins, and how are they used? 
+19. Explain what EC2 is and how it differs from traditional VMs. 
+20. How do you create a server in EC2? 
+21. I have my own server; how do I create a VM on it?
+22. What is AWS Lambda, and how does it work?
+23. What is S3, and what are its use cases?
+24. What are nodes in Kubernetes?
+25. What is a Pod in Kubernetes?
+26. What are Services in Kubernetes?
+27. How does a Load Balancer work in Kubernetes?
+28. Explain Blue-Green Deployment.
+29. What are the basic commands in Terraform? 
+30. What are Modules in Terraform?
+31. What are some basic Bash commands?
+32. How do you access a service from any directory in Linux? 
+33. Where should system services be saved? 
+
+--------------- 11 ---------------------
+1. What is VPC
+2. How can you define a public and private subnet in VPC
+3. How an EC2 instance can fetch something from internet 
+4. How does a request from the app go to the internet
+5. If you restrict the security group, NACL and the NAT Gateways then how can you connect and fetch something from S3 
+6. What is Service in Kubernetes 
+7. How can a service know which pod to send traffic to 
+8. If you don't set service in kubernetes then how can a request reach the app
+9. What is Load balancer in Kubernetes 
+10. How can a request know how to reach the app if you set ingress
+11. Difference between Security group and NACL
+12. How can you manage access in VPC 
+13. How can you deploy in kubernetes using AWS
+14. If you are using EKS then how can a service in AWS talk with another service in AWS 
+15. Write a shellscript to check if a file is empty or not 
+16. Write a shell script to check if a file is empty or not [if you have 10 files ]
+17. How to write a Dockerfile 
+18. How can you reduce the size of a Dockerfile 
+19. What are the security concerns that you keep in mind while writing a Dockerfile.
+20. How will you utilise Dockerfile in a CICD pipeline.
+
+--------------- 12 ---------------------
+Docker Interview Questions:
+ 1. What is Docker, and why is it used?
+ 2. What is the difference between a container and a virtual machine?
+ 3. What is a Dockerfile, and how is it used?
+ 4. What is the difference between COPY and ADD in a Dockerfile?
+ 5. How do you build a Docker image using a Dockerfile?
+ 6. What is the purpose of CMD and ENTRYPOINT? How do they differ?
+ 7. How do you list all running containers?
+ 8. What is a Docker volume, and why is it used?
+ 9. How do you stop and remove a container?
+ 10. What is a multi-stage build, and why is it important?
+ 11. What is Docker Compose, and how is it different from Docker?
+ 12. How do you scale containers in Docker Compose?
+ 13. What are the different types of Docker networks?
+ 14. What is the difference between docker stop and docker kill?
+ 15. How do you inspect a Docker container or image?
+ 16. How do you clean up unused images, containers, and volumes?
+ 17. What is Docker Swarm, and when would you use it?
+ 18. How do you share Docker images with others?
+ 19. What are some best practices for writing a Dockerfile?
+ 20. How do you check logs for a running Docker container?

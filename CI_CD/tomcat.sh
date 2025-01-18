@@ -31,5 +31,9 @@ sudo cp -pvr /opt/tomcat/webapps/host-manager/META-INF/context.xml "/opt/tomcat/
 sed -i '2,$d' /opt/tomcat/webapps/host-manager/META-INF/context.xml
 echo '<Context antiResourceLocking="false" privileged="true" >' >> /opt/tomcat/webapps/host-manager/META-INF/context.xml
 echo '</Context>' >> /opt/tomcat/webapps/host-manager/META-INF/context.xml
-cd /opt/tomcat/bin/
-./startup.sh
+cd /etc/systemd/system/
+wget https://raw.githubusercontent.com/satheeshr240/Terraform/main/CI_CD/INIT_Scripts_Start/tomcat.service
+#cd /opt/tomcat/bin/
+#./startup.sh
+systemctl enable tomcat
+systemctl start tomcat
