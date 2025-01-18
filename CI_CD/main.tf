@@ -23,7 +23,7 @@ terraform {
   }
 }
 
-/* # Continuous Integration - Jenkins
+# Continuous Integration - Jenkins
 resource "aws_instance" "satheesh_Jenkins" {
   ami                    = var.ami
   instance_type          = var.instance_type
@@ -38,7 +38,7 @@ resource "aws_instance" "satheesh_Jenkins" {
   }
 }
 
-# Continuous Static Code Analysis Tool - SonarQube
+/* # Continuous Static Code Analysis Tool - SonarQube
 resource "aws_instance" "satheesh_Sonarqube" {
   ami                    = var.ami
   instance_type          = var.instance_type
@@ -66,7 +66,7 @@ resource "aws_instance" "sathi_jfrog" {
     Name      = "sathi_jfrog"
     CreatedBy = "Terraform"
   }
-} */
+} 
 
 # Application Server - Apache Tomcat 
 resource "aws_instance" "sathi_tomcat" {
@@ -81,4 +81,4 @@ resource "aws_instance" "sathi_tomcat" {
     Name="sathi_tomacat1"
     CreatedBy="terraform"
   }
-}
+} */

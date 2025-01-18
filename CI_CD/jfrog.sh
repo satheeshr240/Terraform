@@ -58,7 +58,7 @@ cd /opt/jfrog/app/bin/
     # sudo cd /etc/systemd/system/
 
     # Downloading the Dockerfile from Git
-    # sudo wget https://raw.githubusercontent.com/satheeshr240/Terraform/main/CI_CD/INIT_Scripts/artifactory.service
+    # sudo wget https://raw.githubusercontent.com/satheeshr240/Terraform/main/CI_CD/INIT_Scripts_Start/artifactory.service
   
     # Start JFrog Service
 
