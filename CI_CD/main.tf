@@ -53,7 +53,7 @@ resource "aws_instance" "satheesh_Sonarqube" {
   }
 } 
 
-/*# Continuous Binary Code Repository - JFROG
+# Continuous Binary Code Repository - JFROG
 resource "aws_instance" "sathi_jfrog" {
   ami                    = var.ami
   instance_type          = var.instance_type
@@ -81,4 +81,4 @@ resource "aws_instance" "sathi_tomcat" {
     Name="sathi_tomacat1"
     CreatedBy="terraform"
   }
-} */
+} 
