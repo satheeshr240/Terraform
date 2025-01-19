@@ -28,9 +28,10 @@ cd /opt/
 # Download JFROG Software 
 # sudo wget  https://releases.jfrog.io/artifactory/bintray-artifactory/org/artifactory/oss/jfrog-artifactory-oss/[RELEASE]/jfrog-artifactory-oss-[RELEASE]-linux.tar.gz  
 sudo wget  https://releases.jfrog.io/artifactory/bintray-artifactory/org/artifactory/oss/jfrog-artifactory-oss/7.9.0/jfrog-artifactory-oss-7.9.0-linux.tar.gz 
+sudo wget  https://releases.jfrog.io/artifactory/bintray-artifactory/org/artifactory/oss/jfrog-artifactory-oss/7.98.9/jfrog-artifactory-oss-7.98.9-linux.tar.gz 
 
  # Extract the Tar File
-tar xvzf jfrog-artifactory-oss-\[RELEASE\]-linux.tar.gz 
+tar xvzf jfrog-artifactory-oss-7.98.9-linux.tar.gz 
 
 # Rename the Directory 
 mv artifactory-oss-* jfrog
