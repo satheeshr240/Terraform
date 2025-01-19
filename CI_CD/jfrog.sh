@@ -12,14 +12,14 @@ sudo apt-get update
 # Install required utility softwares
 sudo apt-get install vim curl elinks unzip wget tree git -y
 
-# Download, Install Java 22
-sudo apt-get install openjdk-22-jdk -y 
+# Download, Install Java 21
+sudo apt-get install openjdk-21-jdk -y 
 
 # Backup the Environment File
 sudo cp -pvr /etc/environment "/etc/environment_$(date +%F_%R)"
 
 # Create Environment Variables
-echo "JAVA_HOME=/usr/lib/jvm/java-22-openjdk-amd64/" >> /etc/environment 
+echo "JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64/" >> /etc/environment 
 
 # Compile the Configuration
 source /etc/environment

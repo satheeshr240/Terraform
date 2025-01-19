@@ -3,9 +3,9 @@ sudo hostnamectl set-hostname "tomcat.cloudbinary.io"
 echo "`hostname -I | awk '{ print $1 }'` `hostname`" >> /etc/hosts
 sudo apt-get update
 sudo apt-get install git wget unzip curl tree -y
-sudo apt-get install openjdk-22-jdk -y
+sudo apt-get install openjdk-21-jdk -y
 sudo cp -pvr /etc/environment "/etc/environment_$(date +%F_%R)"
-echo "JAVA_HOME=/usr/lib/jvm/java-22-openjdk-amd64/" >> /etc/environment
+echo "JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64/" >> /etc/environment
 cd /opt/
 # sudo wget https://downloads.apache.org/tomcat/tomcat-8/v8.5.96/bin/apache-tomcat-8.5.96.tar.gz
 #sudo wget https://downloads.apache.org/tomcat/tomcat-11/v11.0.0-M24/bin/apache-tomcat-11.0.0-M24.tar.gz
